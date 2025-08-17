@@ -125,9 +125,16 @@
         <div class="error" id="errorMessage" style="display: none;"></div>
         
         <div class="debug-info" id="debugInfo" style="display: none;"></div>
+
+        <!-- <div class="platform-info" class="platformInfo" style="display: none;"></div> -->
     </div>
 
     <script>
+
+        // function showPlatformInfo(platform){
+        //     const platformElement = document.getElementById('platformInfo')
+        // }
+
         function showDebugInfo(info) {
             const debugElement = document.getElementById('debugInfo');
             debugElement.style.display = 'block';
@@ -179,6 +186,7 @@
                 showDebugInfo({
                     eitaaSDK: typeof window.Eitaa !== 'undefined',
                     initData: window.Eitaa.WebApp.initData,
+                    platform: window.Eitaa.WebApp.platform,
                     user: user
                 });
                 
@@ -186,8 +194,8 @@
                 displayUserInfo(user);
                 
                 
-                console.log("here")
-                console.log(window.Eitaa.WebApp.platform)
+                // console.log("here")
+                // console.log(window.Eitaa.WebApp.platform)
 
                 // Tell Eitaa that the app is ready
                 if (window.Eitaa.WebApp.ready) {
